@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- style.css -->
-    <link rel="stylesheet" href='style.css'>
+    <link rel="stylesheet" href='/static/style.css'>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -319,12 +319,12 @@
                                     <p>First we need to set up the html page. Vue doesn't have anything to add to the html head, so we can leave that alone. We'll cover CSS, Google Fonts, and Axios later, these are just the basics; the title in the html head isn't important. In the html body, add the Vue CDN, <a
                                             href='https://v3.vuejs.org/guide/installation.html#cdn'>found here</a>, as
                                         well as your javascript page. Order matters, so add Vue first. It needs to be underneath the div pair with the id of 'app'.  </p>
-                                    <img src='images/settingUpHtml.png' />
+                                    <img src='static/images/settingUpHtml.png' />
 
                                     <h4 id="item-2">Setting Up Vue.js</h4>
                                     <p>Now we can go to our javascript file, and create a new Vue app. This is Vue in
                                         its most basic form, before we add functionality to it. </p>
-                                    <img src='images/settingUpVue.png' />
+                                    <img src='static/images/settingUpVue.png' />
 
                                     <h4 id="item-3">Three Main Stations</h4>
                                     <p>To make Vue and the html work together, we'll have three stations that we can
@@ -337,15 +337,15 @@
                                         our input types (text, number, email, radio, select, checkbox, etc.), outputs, forms, buttons, and how we'll ultimately want them to
                                         react to user input. Look through the 'Vue HTML' section to see the most
                                         common Vue-specific html elements. </p>
-                                    <img src='images/CalculateHtml.png' />
+                                    <img src='static/images/CalculateHtml.png' />
 
                                     <h5 id="item-3-2">Data Station</h5>
                                     <p>We can think of the data station as real-time storage locker that we can access from anywhere in our html and vue pages. The data station is an object full of key/value pairs that will keep track of the state of all of our data. The key will be a data variable, and just like any other variable in programming, we'll name it based on what it's keeping track of. The value will establish both the data type, and the current state of our key; it can be left blank, or a value can be hard-coded into it. Here, we'll want to think about what data types we need for our input/output (arrays, numbers, strings, objects, etc.), as well as the initial value.  </p>
-                                    <img src="images/dataStation.png" />
+                                    <img src="static/images/dataStation.png" />
 
                                     <h5 id="item-3-3">Methods Station</h5>
                                     <p>Here at the methods station, we can start writing functions to use in our app. None of these functions will run until they're called, and we can do that in a few different ways. We can call one function inside another right here in the methods, or use v-on to trigger the function after an event (such as a click). In the advanced topics section, we'll look at Vue's lifecycle hooks, which can also call a function from methods. We'll want to think about how data needs to be able to move, and how we'll add that functionality to it. We can use any variable from the data station as long as we add this. to it first.  </p>
-                                    <img src='images/methodStation.png' />
+                                    <img src='static/images/methodStation.png' />
                                 </div>
 
                             </div>
@@ -401,15 +401,16 @@
                         Binding</a>
                     <br />
                     <br />
+                    <hr />
 
 
-                    <!-- To render data from vue, place the variable in {{double curly brackets}}. This is how we read the sayHello data variable, and render it in html. -->
+                    <!-- To render data from vue, place the variable in [[double curly brackets]]. This is how we read the sayHello data variable, and render it in html. -->
                     <div>
                         <h2>Rendering from Vue</h2>
                         This is a basic render. This shows a message that has been hard-coded into Vue.
                     </div>
                     <div>
-                        The message is: {{sayHello}}
+                        The message is: [[sayHello]]
                     </div>
                     <div>
                         <!-- Button trigger modal -->
@@ -434,10 +435,10 @@
                                             we
                                             read
                                             the sayHello data variable, and render it in html.</p>
-                                        <img src='images/RenderingFromVueHtml.PNG'>
+                                        <img src='static/images/RenderingFromVueHtml.PNG'>
                                         <p>The html page will render this by placing the value in double curly brackets.
                                         </p>
-                                        <img src='images/RenderingFromVueJs.PNG'>
+                                        <img src='static/images/RenderingFromVueJs.PNG'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -449,6 +450,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
 
@@ -468,7 +470,7 @@
                             you
                             type something. </label>
                         <div id='currentTyping'>
-                            {{userName}}
+                            [[userName]]
                         </div>
                     </div>
                     <div>
@@ -500,9 +502,9 @@
                                             on
                                             the
                                             browser</p>
-                                        <img src='images/userNameTextHtml.png'>
+                                        <img src='static/images/userNameTextHtml.png'>
                                         <p>userName is a blank value waiting on input from the user through v-model</p>
-                                        <img src='images/userNameTextJs.png'>
+                                        <img src='static/images/userNameTextJs.png'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -514,6 +516,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
 
@@ -527,13 +530,13 @@
                         <label for='dropDown'>Drop Downs:
                             <select v-model='chosenColorDynamic'>
                                 <option v-for='color in colors' v-bind:value='color' id='dropDown'>
-                                    {{color}}
+                                    [[color]]
                                 </option>
                             </select>
                         </label>
                     </div>
                     <div>
-                        The color you select will appear here: {{chosenColorDynamic}}
+                        The color you select will appear here: [[chosenColorDynamic]]
                     </div>
                     <div>
                         <!-- Button trigger modal -->
@@ -576,7 +579,7 @@
                                             didn't
                                             need
                                             access to the value, we wouldn't v-bind it.</p>
-                                        <img src='images/SelectDynamicHtml.png'>
+                                        <img src='static/images/SelectDynamicHtml.png'>
                                         <p>Chosen color from the colors list; it can be initially set to any value from
                                             the
                                             colors
@@ -587,7 +590,7 @@
                                             leave
                                             the
                                             dropdown blank until clicked on.</p>
-                                        <img src='images/SelectDynamicJs.png'>
+                                        <img src='static/images/SelectDynamicJs.png'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -599,6 +602,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
 
@@ -619,7 +623,7 @@
                         </label>
                     </div>
                     <div>
-                        The color you select will appear here: {{chosenColorStatic}}
+                        The color you select will appear here: [[chosenColorStatic]]
                     </div>
                     <div>
                         <!-- Button trigger modal -->
@@ -649,7 +653,7 @@
                                             in the vue app just like we did with the dynamic select.
                                             Alternatively, we can add a decorative option to tell the user what to do.
                                         </p>
-                                        <img src='images/SelectStaticHtml.png'>
+                                        <img src='static/images/SelectStaticHtml.png'>
                                         <p>
                                             The value for chosenColorStatic is hard-coded into the html, and will only
                                             be
@@ -661,7 +665,7 @@
                                             the
                                             html list, the select would be blank until clicked on.
                                         </p>
-                                        <img src='images/SelectStaticJs.png'>
+                                        <img src='static/images/SelectStaticJs.png'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -673,6 +677,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
                     <!-- To dynamically render radio buttons, we'll need to use v-bind on the value again, just like we did with the drop downs.  -->
@@ -683,12 +688,13 @@
                         <label v-for='animal in animals'>
                             <input type='radio' v-bind:value='animal' v-model='chosenRadioAnimalDynamic'
                                 v-bind:id='animal'>
-                            {{animal}}
+                            [[animal]]
                         </label>
                     </div>
                     <div>
-                        You chose: {{chosenRadioAnimalDynamic}}
+                        You chose: [[chosenRadioAnimalDynamic]]
                     </div>
+                    <br />
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#radioButtonsDynamic">
@@ -716,7 +722,7 @@
                                         the
                                         input. For the left, set it before the input
                                     </p>
-                                    <img src='images/RadioButtonsDynamicHtml.png'>
+                                    <img src='static/images/RadioButtonsDynamicHtml.png'>
                                     <p>
                                         The html will use a v-for loop to iterate over the animals list, and render a
                                         radio
@@ -727,7 +733,7 @@
                                         this
                                         were left blank, none of the boxes would be check when the page loads/refreshes.
                                     </p>
-                                    <img src='images/RadioButtonsDynamicJs.png'>
+                                    <img src='static/images/RadioButtonsDynamicJs.png'>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -738,6 +744,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
                     <!--Notice how we didn't use v-bind with the value? That's because the radio buttons are hard-coded into the html. -->
@@ -758,8 +765,9 @@
                         </label>
                     </div>
                     <div>
-                        You chose: {{chosenRadioAnimalStatic}}
+                        You chose: [[chosenRadioAnimalStatic]]
                     </div>
+                    <br />
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#radioButtonsStatic">
@@ -791,7 +799,7 @@
                                         to
                                         come from a radio button.
                                     </p>
-                                    <img src='images/RadioButtonsStaticHtml.png'>
+                                    <img src='static/images/RadioButtonsStaticHtml.png'>
                                     <p>
                                         Since all three radio buttons (cats, dogs, velociraptor) are hard-coded into the
                                         html,
@@ -799,7 +807,7 @@
                                         'Velociraptor' here, its button will already be checked when the page
                                         loads/refreshes.
                                     </p>
-                                    <img src='images/RadioButtonsStaticJs.png'>
+                                    <img src='static/images/RadioButtonsStaticJs.png'>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -810,14 +818,15 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
                     <!-- To pull from a list of dictionaries, loop over the dictionary and call the key; this will call the selected values from data  -->
                     <div>
                         <h2>Rendering From a List of Dictionaries</h2>
                         This is how to loop over a list of dictionaries and pull out the desired values:
                         <div v-for='contact in contacts'>
-                            {{contact.name}}
-                            {{contact.phoneNumber}}
+                            [[contact.name]]
+                            [[contact.phoneNumber]]
                         </div>
                         <br />
                         <!-- To pull a specific entry, we need to first call the list by its name, in this case contacts. Since each dictionary is a list element, we can call it by its index; since Jane Doe is the second entry in the list, their dictionary is at index 1.   -->
@@ -825,23 +834,25 @@
                             <label for='wholeListOfDicts'>
                                 This is the whole list of dictionaries:
                                 <div id='wholeListOfDicts'>
-                                    {{contacts}}
+                                    [[contacts]]
                                 </div>
                             </label>
                             <br />
+                            <br />
 
-                            <label for='individualDict'>
+                             <label for='individualDict'>
                                 This is an individual's dictionary at index 1:
                                 <div id='individualDict'>
-                                    {{contacts[1]}}
+                                    [[ contacts[1] ]]
                                 </div>
                             </label>
+                            <br />
                             <br />
 
                             <label>
                                 This is the name from the dictionary at index 1:
                                 <div id='individualName'>
-                                    {{contacts[1]['name']}}
+                                    [[ contacts[1]['name'] ]]
                                 </div>
                             </label>
                         </div>
@@ -879,11 +890,11 @@
                                         index
                                         1.
                                     </p>
-                                    <img src='images/ListOfDictsHtml.png'>
+                                    <img src='static/images/ListOfDictsHtml.png'>
                                     <p>
                                         contacts holds a list of dictionaries that we can render in html.
                                     </p>
-                                    <img src='images/ListOfDictsJs.png'>
+                                    <img src='static/images/ListOfDictsJs.png'>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -894,6 +905,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
                     <!-- Checkboxes are boolean values (checked or unchecked, true or false) that can bound to data variables in vue just like text and radio buttons -->
                     <div>
@@ -959,7 +971,7 @@
                                             be
                                             checked/unchecked simultaneously
                                         </p>
-                                        <img src='images/StandardCheckboxesHtml.png'>
+                                        <img src='static/images/StandardCheckboxesHtml.png'>
                                         <p>
                                             A checkbox is a boolean, so an empty string will leave the box unchecked,
                                             and
@@ -974,7 +986,7 @@
                                             also be
                                             checked.
                                         </p>
-                                        <img src='images/StandardCheckboxesJs.png'>
+                                        <img src='static/images/StandardCheckboxesJs.png'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -984,22 +996,24 @@
                             </div>
                         </div>
                         <br />
+                        <br />
+                        <hr />
 
                         <!-- Just like with select inputs, we iterate over the redFruits list with a v-for, and generate our checkboxes from it. We used v-bind on the value because the list is coded in Vue -->
                         <div>
                             <h2>Rendering Checkboxes Dynamically</h2>
                             <div v-for='fruit in redFruits'>
-                                <label for='redFruits'> {{ fruit }}
+                                <label for='redFruits'> [[ fruit ]]
                                     <input type='checkbox' id='redFruits' v-bind:value='fruit'
                                         v-model='checkedRedFruits' />
                                 </label>
-                                <br />
                             </div>
+                            <br />
                             <!-- The checkedRedFruits list holds onto everything we selected from the redFruits list. Since we used v-bind on the value attribute, the values were loaded into the checkedRedFruits list. These boxes will show up in a column because they each have their own div element.-->
                             <div>
                                 The currently checked red fruits are:
                                 <div v-for='fruit in checkedRedFruits'>
-                                    {{fruit}}
+                                    [[fruit]]
                                 </div>
                             </div>
                         </div>
@@ -1039,13 +1053,13 @@
                                             their
                                             own div element.
                                         </p>
-                                        <img src='images/DynamicCheckboxesHtml.png'>
+                                        <img src='static/images/DynamicCheckboxesHtml.png'>
                                         <p>
                                             The redFruits list will be used to generate multiple checkboxes.
                                             As the user checks and unchecks boxes, their values will be added and
                                             removed
                                             accordingly in the checkedRedFruits list.
-                                            <img src='images/DynamicCheckboxesJs.png'>
+                                            <img src='static/images/DynamicCheckboxesJs.png'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -1055,6 +1069,8 @@
                             </div>
                         </div>
                         <br />
+                        <br />
+                        <hr />
                         <!-- These checkboxes are all bound to an empty list, so when the box is checked, its value is added to the list. We can see the state of the list as it updates below. These checkboxes will appear in a row because they're all held within the save div element.Because the checkboxes are being hard-coded into the html, we don't need to use v-bind on the value. -->
                         <div>
                             <h2>Rendering Checkboxes Hard-Coded</h2>
@@ -1072,10 +1088,11 @@
                             <div>
                                 The currently checked green fruits are:
                                 <div v-for='greenFruit in checkedGreenFruits'>
-                                    {{greenFruit}}
+                                    [[greenFruit]]
                                 </div>
                             </div>
                         </div>
+                        <br />
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#staticCheckboxes">
@@ -1105,13 +1122,13 @@
                                             the list; when it's unchecked, it's removed from the list. v-model is what
                                             does this magic for us.
                                         </p>
-                                        <img src='images/StaticCheckboxesHtml.png'>
+                                        <img src='static/images/StaticCheckboxesHtml.png'>
                                         <p>
                                             Because the green fruits are hard-coded into the html, we only need a blank
                                             list to catch the selections. v-model adds and removes the green fruits as
                                             they're selected.
                                         </p>
-                                        <img src='images/StaticCheckboxesJs.png'>
+                                        <img src='static/images/StaticCheckboxesJs.png'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -1122,6 +1139,7 @@
                         </div>
                     </div>
                     <br />
+                    <hr />
 
 
 
@@ -1140,8 +1158,9 @@
                         <button type='button' @click='calculate'>Calculate</button>
                     </div>
                     <div>
-                        {{firstNum}} + {{secondNum}} = {{answer}}
+                        [[firstNum]] + [[secondNum]] = [[answer]]
                     </div>
+                    <br />
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calculate">
                         View Source Code
@@ -1163,7 +1182,7 @@
                                         Since our function is in vue, we need to add v-on so it can communicate with the
                                         html.
                                     </p>
-                                    <img src='images/CalculateHtml.png'>
+                                    <img src='static/images/CalculateHtml.png'>
                                     <p>
                                         these values act just like the others in our data. The only difference is that
                                         these are used in methods on this particular document. Look at the functions
@@ -1172,7 +1191,7 @@
                                         don't need to return anything (Vue essentially does it for you). So to refer to
                                         firstNum, we would say this.firstNum.
                                     </p>
-                                    <img src='images/CalculateJs.png'>
+                                    <img src='static/images/CalculateJs.png'>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -1183,6 +1202,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
                     <div>
                         <h2>Using the calculateTemp Method</h2>
@@ -1192,17 +1212,17 @@
                         </label>
                         <select v-model='startingUnit'>
                             <option v-for='temp in tempList' v-bind:value='temp'>
-                                {{ temp }}
+                                [[ temp ]]
                             </option>
                         </select>
                         Converted to:
                         <select v-model='requestedUnit'>
                             <option v-for='temp in tempList' v-bind:value='temp'>
-                                {{temp}}
+                                [[temp]]
                             </option>
                         </select>
                         <button type='button' v-on:click='tempConversion'>Convert</button>
-                        {{convertedNum}}°
+                        [[convertedNum]]°
                     </div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -1223,11 +1243,11 @@
                                     <p>
                                         Here's a more advanced version of what we did in the calculate method. The degrees symbols are unicode characters, and we can 
                                     </p>
-                                    <img src='images/TempHtml.png'>
+                                    <img src='static/images/TempHtml.png'>
                                     <p>
                                         
                                     </p>
-                                    <img src='images/TempJs.png'>
+                                    <img src='static/images/TempJs.png'>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -1244,6 +1264,7 @@
         </div>
     </div>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -1255,7 +1276,7 @@
         integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
         crossorigin='anonymous'></script>
     <!-- Page JS -->
-    <script src='vue_example.js'></script>
+    <script src="{{ url_for('static', filename='vueseum.js') }}"></script>
 </body>
 
 </html>

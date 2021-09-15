@@ -3,6 +3,7 @@
 
 let app = new Vue({
     el: '#app',
+    delimiters: ['[[', ']]'],
     // data is where Vue holds variables that can be used in both the html file, and in the methods portion. Essentially, these allow Vue.js to instantly communicate with your html file. 
 
     data: {
