@@ -470,7 +470,7 @@
                         This is a basic render. This shows a message that has been hard-coded into Vue.
                     </div>
                     <div>
-                        The message is: [[sayHello]]
+                        The message is: [[ sayHello ]]
                     </div>
                     <div>
                         <!-- Button trigger modal -->
@@ -529,7 +529,7 @@
                             you
                             type something. </label>
                         <div id='currentTyping'>
-                            [[userName]]
+                            [[ userName ]]
                         </div>
                     </div>
                     <div>
@@ -588,13 +588,13 @@
                         <label for='dropDown'>Drop Downs:
                             <select v-model='chosenColorDynamic'>
                                 <option v-for='color in colors' v-bind:value='color' id='dropDown'>
-                                    [[color]]
+                                    [[ color ]]
                                 </option>
                             </select>
                         </label>
                     </div>
                     <div>
-                        The color you select will appear here: [[chosenColorDynamic]]
+                        The color you select will appear here: [[ chosenColorDynamic ]]
                     </div>
                     <div>
                         <!-- Button trigger modal -->
@@ -680,7 +680,7 @@
                         </label>
                     </div>
                     <div>
-                        The color you select will appear here: [[chosenColorStatic]]
+                        The color you select will appear here: [[ chosenColorStatic ]]
                     </div>
                     <div>
                         <!-- Button trigger modal -->
@@ -744,11 +744,11 @@
                         <label v-for='animal in animals'>
                             <input type='radio' v-bind:value='animal' v-model='chosenRadioAnimalDynamic'
                                 v-bind:id='animal'>
-                            [[animal]]
+                            [[ animal ]]
                         </label>
                     </div>
                     <div>
-                        You chose: [[chosenRadioAnimalDynamic]]
+                        You chose: [[ chosenRadioAnimalDynamic ]]
                     </div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -819,7 +819,7 @@
                         </label>
                     </div>
                     <div>
-                        You chose: [[chosenRadioAnimalStatic]]
+                        You chose: [[ chosenRadioAnimalStatic ]]
                     </div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -877,8 +877,8 @@
                         <h2 id="renderingFromAListOfDictionaries">Rendering From a List of Dictionaries</h2>
                         This is how to loop over a list of dictionaries and pull out the desired values:
                         <div v-for='contact in contacts'>
-                            [[contact.name]]
-                            [[contact.phoneNumber]]
+                            [[ contact.name ]]
+                            [[ contact.phoneNumber ]]
                         </div>
                         <br />
                         <!-- To pull a specific entry, we need to first call the list by its name, in this case contacts. Since each dictionary is a list element, we can call it by its index; since Jane Doe is the second entry in the list, their dictionary is at index 1.   -->
@@ -886,7 +886,7 @@
                             <label for='wholeListOfDicts'>
                                 This is the whole list of dictionaries:
                                 <div id='wholeListOfDicts'>
-                                    [[contacts]]
+                                    [[ contacts ]]
                                 </div>
                             </label>
                             <br />
@@ -894,7 +894,7 @@
                             <label for='individualDict'>
                                 This is an individual's dictionary at index 1:
                                 <div id='individualDict'>
-                                    [[contacts[1]]]
+                                    [[ contacts[1 ]]]
                                 </div>
                             </label>
                             <br />
@@ -902,7 +902,7 @@
                             <label>
                                 This is the name from the dictionary at index 1:
                                 <div id='individualName'>
-                                    [[contacts[1]['name']]]
+                                    [[ contacts[1]['name' ]]]
                                 </div>
                             </label>
                         </div>
@@ -1050,7 +1050,7 @@
                         <div>
                             <h2 id="renderingCheckboxesDynamic">Rendering Checkboxes Dynamically</h2>
                             <div v-for='fruit in redFruits'>
-                                <label for='redFruits'> [[ fruit ]]
+                                <label for='redFruits'> [[  fruit  ]]
                                     <input type='checkbox' id='redFruits' v-bind:value='fruit'
                                         v-model='checkedRedFruits' />
                                 </label>
@@ -1060,7 +1060,7 @@
                             <div>
                                 The currently checked red fruits are:
                                 <div v-for='fruit in checkedRedFruits'>
-                                    [[fruit]]
+                                    [[ fruit ]]
                                 </div>
                             </div>
                         </div>
@@ -1133,7 +1133,7 @@
                             <div>
                                 The currently checked green fruits are:
                                 <div v-for='greenFruit in checkedGreenFruits'>
-                                    [[greenFruit]]
+                                    [[ greenFruit ]]
                                 </div>
                             </div>
                         </div>
@@ -1201,7 +1201,7 @@
                         <button type='button' @click='calculate'>Calculate</button>
                     </div>
                     <div>
-                        [[firstNum]] + [[secondNum]] = [[answer]]
+                        [[ firstNum ]] + [[ secondNum ]] = [[ answer ]]
                     </div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calculate">
@@ -1253,17 +1253,17 @@
                         </label>
                         <select v-model='startingUnit'>
                             <option v-for='temp in tempList' v-bind:value='temp'>
-                                [[ temp ]]
+                                [[  temp  ]]
                             </option>
                         </select>
                         Converted to:
                         <select v-model='requestedUnit'>
                             <option v-for='temp in tempList' v-bind:value='temp'>
-                                [[temp]]
+                                [[ temp ]]
                             </option>
                         </select>
                         <button type='button' v-on:click='tempConversion'>Convert</button>
-                        [[convertedNum]]°
+                        [[ convertedNum ]]°
                     </div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -1318,7 +1318,7 @@
         integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
         crossorigin='anonymous'></script>
     <!-- Page JS -->
-    <script src="[[ url_for('static', filename='vueseum.js') ]]"></script>
+    <script src="[[  url_for('static', filename='vueseum.js')  ]]"></script>
 </body>
 
 </html>
