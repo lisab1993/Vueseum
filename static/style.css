@@ -136,8 +136,13 @@ header-link {
     font-family: 'Alumni Sans', sans-serif;
     font-size: 5.5rem;
     font-weight: bolder;
+    vertical-align: top;
 }
 
 .btn-primary {
     margin-top: 2rem;
+}
+
+.intro-paragraph {
+    margin-right: 20rem;
 }

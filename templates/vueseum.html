@@ -349,13 +349,13 @@
                                         started. These stations are the html page, the data section of Vue, and the
                                         methods section of Vue. You don't have to start at any particular station, and
                                         you don't have to finish one to start another. </p>
-                                        <br />
+                                    <br />
 
                                     <h5 id="item-3-1">HTML Station</h5>
                                     <p>In our html station, we're building our visual display. We'll want to think about
                                         our input types (text, number, email, radio, select, checkbox, etc.), outputs,
                                         forms, buttons, and how we'll ultimately want them to
-                                        react to user input. Look through the 'Vue HTML' section to see the most
+                                        react to user input. Look through the 'Vue Directives' section to see the most
                                         common Vue-specific html elements. </p>
                                     <img src='static/images/CalculateHtml.png' />
                                     <br />
@@ -408,7 +408,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="header-nav-link nav-link" data-bs-toggle="modal" data-bs-target="#thingsToKnow">
-                        Vue HTML
+                        Vue Directives
                     </a>
                 </li>
                 <li class="nav-item">
@@ -454,14 +454,23 @@
 
 
                 <div class='col-10'>
-                    <h1 id="inputsAndRenderingValues">Inputs and Rendering Values</h1>
-                    <p>Vue is used to style the front end of a project, and it can play a small or large role; the
+                    <p class="intro-paragraph">
+                        Everything at the Vueseum is interactive, and contains the source code as well as an explanation
+                        of what's happening. So what is Vue? Vue is used to style the front end of a project, and it can
+                        play a small or large role; the
                         options are endless! In this guide, we'll be covering how to add Vue to an HTML page using a
                         CDN. If you're new to Vue, check out Setting Up to add a vue app. Vue also has its own
                         directives such as v-model, v-bind, etc., and they will be covered in the Vue Directives tab.
                     </p>
-                    <a href='https://vuejs.org/v2/guide/forms.html' target='_blank'>Official Vue Docs for Input
-                        Binding</a>
+                    <br />
+                    <h1 id="inputsAndRenderingValues">Inputs and Rendering Values</h1>
+                    <p>
+                        Vue makes it simple to grab input from a user, and then do something with it. <a
+                            href='https://vuejs.org/v2/guide/forms.html' target='_blank'>Click here</a> to see the
+                        official documentation for input binding.
+                    </p>
+
+
                     <br />
                     <br />
 
@@ -1052,7 +1061,7 @@
                         <div>
                             <h2 id="renderingCheckboxesDynamic">Rendering Checkboxes Dynamically</h2>
                             <div v-for='fruit in redFruits'>
-                                <label for='redFruits'> [[  fruit  ]]
+                                <label for='redFruits'> [[ fruit ]]
                                     <input type='checkbox' id='redFruits' v-bind:value='fruit'
                                         v-model='checkedRedFruits' />
                                 </label>
@@ -1061,7 +1070,7 @@
                             <!-- The checkedRedFruits list holds onto everything we selected from the redFruits list. Since we used v-bind on the value attribute, the values were loaded into the checkedRedFruits list. These boxes will show up in a column because they each have their own div element.-->
                             <div>
                                 The currently checked red fruits are:
-                                <div v-for='fruit in checkedRedFruits'>
+                                <div v-for='fruit in checkedRedFruits' class="ms-3">
                                     [[ fruit ]]
                                 </div>
                             </div>
@@ -1134,7 +1143,7 @@
                             <!-- By iterating over the checkedGreenFruits list using v-for, we can see the values in the list as we store them. When a box is checked, it's added to the list; when it's unchecked, it's removed from the list. v-model is what does this magic for us. -->
                             <div>
                                 The currently checked green fruits are:
-                                <div v-for='greenFruit in checkedGreenFruits'>
+                                <div v-for='greenFruit in checkedGreenFruits' class="ms-3">
                                     [[ greenFruit ]]
                                 </div>
                             </div>
@@ -1206,7 +1215,8 @@
                         [[ firstNum ]] + [[ secondNum ]] = [[ answer ]]
                     </div>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calculateModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#calculateModal">
                         View Source Code
                     </button>
                     <!-- Modal -->
@@ -1255,7 +1265,7 @@
                         </label>
                         <select v-model='startingUnit'>
                             <option v-for='temp in tempList' v-bind:value='temp'>
-                                [[  temp  ]]
+                                [[ temp ]]
                             </option>
                         </select>
                         Converted to:
@@ -1285,10 +1295,22 @@
                                 <div class="modal-body text-center">
                                     <p>
                                         Here's a more advanced version of what we did in the calculate method. The
-                                        degrees symbols are unicode characters, and we can
+                                        degrees symbols are unicode characters, and they can be found at websites such
+                                        as <a href="https://unicode-table.com/en/"
+                                            target="_blank">unicode-table.com</a>. In our html section, we need to add 3
+                                        different inputs, and a button to run the function.<br /> The first is the
+                                        inputTempNum, and it will be the temperature the user wants to convert. The
+                                        startingUnit is a dropdown to get the starting unit for the given temperature
+                                        (see Rendering Select and Options Dynamic if you're not sure about drop downs).
+                                        Finally, the requestedUnit is another dropdown just like the startingUnit, only
+                                        this one will be the target unit.
                                     </p>
                                     <img src='static/images/TempHtml.png'>
                                     <p>
+                                        First we'll cover the data variables. The inputTempNum is grabbing the starting
+                                        temperature from the user. The convertedNum is getting the temperature the user
+                                        wants to convert to. Our tempList will be used to populate both dropdowns from which the startingUnit and requestedUnit will be selected. <br /> <br />
+                                        The method itself is converting the input temperature into celsius, and then converting from celsius to the target unit. Everything is regular Javascript, we just need to put this. behind all of our data variables here to use them. 
 
                                     </p>
                                     <img src='static/images/TempJs.png'>
