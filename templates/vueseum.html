@@ -168,11 +168,11 @@
                                         <h4 id="vIf">v-if, v-else-if, v-else</h4>
                                         <div>
                                             <div>
-                                                v-if statements don't work like the standard if statements from
-                                                JavaScript and Python. v-if statements are one of two ways we can
+                                                v-if statements are similar to the if statements we use in Python and
+                                                JavaScript. v-if statements are one of two ways we can
                                                 conditionally render a block of code; they're attached to the parent
                                                 element, and they will either render or not render the block of code.
-                                                We're not writing our own conditions, just checking if the vue data
+                                                We can write our own conditions, or just check if the vue data
                                                 variable is <a
                                                     href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy"
                                                     target="_blank">truthy</a> or <a
@@ -182,11 +182,18 @@
                                                 if the variable equals anything else, it's considered truthy. This
                                                 will help us control when things are rendered, and can help us style our
                                                 output. v-if and v-show are
-                                                extremely similar, and the differences will be explained in the v-show
-                                                section.
+                                                extremely similar, but they can impact performance differently. To quote
+                                                the official docs, "Generally speaking, v-if has higher toggle costs
+                                                while v-show has higher initial render costs. So prefer v-show if you
+                                                need to toggle something very often, and prefer v-if if the condition is
+                                                unlikely to change at runtime." Another key difference is that v-if
+                                                statements allow you to chain multiple conditions together while v-show
+                                                does not. v-if also works with the html template tag, while v-show does
+                                                not.
                                             </div>
                                             <div>
-                                                <a href="https://v3.vuejs.org/guide/conditional.html">Official v-if
+                                                <a href="https://v3.vuejs.org/guide/conditional.html"
+                                                    target="_blank">Official v-if
                                                     Statement Docs</a>
                                             </div>
                                             <div>
@@ -205,8 +212,11 @@
                                             v-show is the other way we can conditionally render code. Like v-if, v-show
                                             is
                                             also checking if a data variable is truthy or falsy. They work nearly
-                                            identically, and you'll only ever see a difference in performance. learnvue
-                                            explains it as such,
+                                            identically, with the differences being in performance, v-if statements can
+                                            build on top of each other, and v-if works with the html template tag while
+                                            v-show does not. If you try to add a v-else-if or v-else after a v-show,
+                                            only the v-show will work. learnvue
+                                            explains the performance differences as such,
                                             <div>
                                                 "Just like all choices in development, it’s important to carefully
                                                 consider
@@ -222,7 +232,7 @@
                                                 logic
                                                 blocks in combination with it. Specifically, we can use v-else and
                                                 v-else-if
-                                                blocks to really build advanced logic into our app.""
+                                                blocks to really build advanced logic into our app."
                                             </div>
                                             <div>
                                                 <a href="https://v3.vuejs.org/guide/conditional.html"
@@ -1200,6 +1210,7 @@
                     <h1 id="applyingMethods">Applying Methods</h1>
                     <!-- We made a calculate function in the vue app, now we need to use it. It's nearly identical to onClick(), only now we say v-on:click='calculate'.  -->
                     <!-- Since our function is in vue, we need to add v-on so it can communicate with the html. -->
+                    <p>Our view app has a place for methods, which are functions that run </p>
                     <div>
                         <h2 id="calculate">Using the calculate Method</h2>
                         <p>Enter two numbers to be added together.</p>
@@ -1309,8 +1320,11 @@
                                     <p>
                                         First we'll cover the data variables. The inputTempNum is grabbing the starting
                                         temperature from the user. The convertedNum is getting the temperature the user
-                                        wants to convert to. Our tempList will be used to populate both dropdowns from which the startingUnit and requestedUnit will be selected. <br /> <br />
-                                        The method itself is converting the input temperature into celsius, and then converting from celsius to the target unit. Everything is regular Javascript, we just need to put this. behind all of our data variables here to use them. 
+                                        wants to convert to. Our tempList will be used to populate both dropdowns from
+                                        which the startingUnit and requestedUnit will be selected. <br /> <br />
+                                        The method itself is converting the input temperature into celsius, and then
+                                        converting from celsius to the target unit. Everything is regular Javascript, we
+                                        just need to put this. behind all of our data variables here to use them.
 
                                     </p>
                                     <img src='static/images/TempJs.png'>
@@ -1324,6 +1338,25 @@
                     </div>
                     <br />
                     <br />
+
+                    <!-- <h1 id='vIfAndShow'>v-if and v-show</h1>
+
+                    <h2>v-if</h2> -->
+                    <!-- 
+                    make a variable in vue to connect to
+                    have it be a text input so the user can control it
+                    make a div with a little message to hide and show
+                    -->
+                    <!-- <div class="mb-5">
+                        <input type="number" v-model="vIfInput" />
+
+                        <div v-show="vIfInput > 5">
+                            Now you see me
+                        </div>
+                        <div v-else-if="vIfInput < 5">
+                            Now you don't
+                        </div>
+                    </div> -->
 
                 </div>
             </div>
