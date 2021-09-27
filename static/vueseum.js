@@ -80,8 +80,9 @@ let app = new Vue({
 
         //v-if and v-else
         vIfInput: '',
-        vIfSecondInput: '',
-        vIfThirdInput: '',
+        vShowInput: '',
+        vIfConditionalInput: '',
+        vShowConditionalInput: '',
 
     },
     // methods is where you'll write your actual javaScript code. You can use the variables from data to get information from your user through the html file. Note that arrow functions will not work here. 

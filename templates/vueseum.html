@@ -310,24 +310,36 @@
 
 
                                 <nav id="navbar-example3"
-                                    class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+                                    class="navbar navbar-light bg-light flex-column align-items-stretch p-3 mb-3">
                                     <nav class="nav nav-pills flex-column">
-                                        <a class="nav-link" href="#item-1">Setting Up HTML</a>
+                                        <a class="nav-link" href="#devTools">Vue Devtools</a>
+                                        <a class="nav-link" href="#setUpHtml">Setting Up HTML</a>
+                                        <a class="nav-link" href="#setUpVue">Setting Up Vue.js</a>
+                                        <a class="nav-link" href="#htmlStation">After Setup</a>
                                         <nav class="nav nav-pills flex-column">
-                                        </nav>
-                                        <a class="nav-link" href="#item-2">Setting Up Vue.js</a>
-                                        <a class="nav-link" href="#item-3">After Setup</a>
-                                        <nav class="nav nav-pills flex-column">
-                                            <a class="nav-link ms-3 my-1" href="#item-3-1">HTML Station</a>
-                                            <a class="nav-link ms-3 my-1" href="#item-3-2">Data Station</a>
-                                            <a class="nav-link ms-3 my-1" href="#item-3-3">Methods Station</a>
+                                            <a class="nav-link ms-3 my-1" href="#htmlStation">HTML Station</a>
+                                            <a class="nav-link ms-3 my-1" href="#dataStation">Data Station</a>
+                                            <a class="nav-link ms-3 my-1" href="#methodsStation">Methods Station</a>
                                         </nav>
                                     </nav>
                                 </nav>
 
                                 <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0"
                                     tabindex="0">
-                                    <h4 id="item-1">Setting Up HTML</h4>
+
+                                    <h4 id="devTools">Vue Devtools</h4>
+                                    <p>Before we get started, we'll need to download <a
+                                            href="https://devtools.vuejs.org/" target="_blank">Vue Devtools</a>. You'll
+                                        be able to access it by opening your web browser's developer console once it's
+                                        installed. This will show us the values of our Vue data variables in real time,
+                                        which will greatly help with debugging and understanding how Vue works.
+                                    </p>
+                                    <img src='static/images/FindingDevTools.png' />
+                                    <br />
+                                    <br />
+                                    <hr />
+
+                                    <h4 id="setUpHtml">Setting Up HTML</h4>
                                     <p>First we need to set up the html page by creating a div pair, and giving it an id
                                         of 'app'. Under the closing div, add the Vue CDN,
                                         <a href='https://v3.vuejs.org/guide/installation.html#cdn' target="_blank">
@@ -344,7 +356,7 @@
                                     <br />
                                     <hr />
 
-                                    <h4 id="item-2">Setting Up Vue.js</h4>
+                                    <h4 id="setUpVue">Setting Up Vue.js</h4>
                                     <p>Now we can go to our javascript file, and create a new Vue app (you can name it
                                         script.js if you're unsure). This is Vue in
                                         its most basic form, before we add functionality to it. </p>
@@ -361,7 +373,7 @@
                                         you don't have to finish one to start another. </p>
                                     <br />
 
-                                    <h5 id="item-3-1">HTML Station</h5>
+                                    <h5 id="htmlStation">HTML Station</h5>
                                     <p>In our html station, we're building our visual display. We'll want to think about
                                         our input types (text, number, email, radio, select, checkbox, etc.), outputs,
                                         forms, buttons, and how we'll ultimately want them to
@@ -370,8 +382,9 @@
                                     <img src='static/images/CalculateHtml.png' />
                                     <br />
                                     <br />
+                                    <hr />
 
-                                    <h5 id="item-3-2">Data Station</h5>
+                                    <h5 id="dataStation">Data Station</h5>
                                     <p>We can think of the data station as real-time storage locker that we can access
                                         from anywhere in our html and vue pages. The data station is an object full of
                                         key/value pairs that will keep track of the state of all of our data. The key
@@ -384,14 +397,14 @@
                                     <img src="static/images/dataStation.png" />
                                     <br />
                                     <br />
+                                    <hr />
 
-                                    <h5 id="item-3-3">Methods Station</h5>
+                                    <h5 id="methodsStation">Methods Station</h5>
                                     <p>Here at the methods station, we can start writing functions to use in our app.
                                         None of these functions will run until they're called, and we can do that in a
                                         few different ways. We can call one function inside another right here in the
                                         methods, or use v-on to trigger the function after an event (such as a click).
-                                        In the advanced topics section, we'll look at Vue's lifecycle hooks, which can
-                                        also call a function from methods. We'll want to think about how data needs to
+                                        Later on, we'll cover the created lifecycle hook, which allows us to run a function every time the page reloads. We'll want to think about how data needs to
                                         be able to move, and how we'll add that functionality to it. We can use any
                                         variable from the data station as long as we add this. to it first. </p>
                                     <img src='static/images/methodStation.png' />
@@ -458,6 +471,12 @@
                                 <a class="nav-link ms-3 my-1" href="#calculate">Example: Calculator</a>
                                 <a class="nav-link ms-3 my-1" href="#convertTemp">Example: Convert Temperature</a>
                             </nav>
+                            <a class="nav-link" href="#vIfAndShow">v-if and v-show</a>
+                            <!-- <a class="nav-link" href="#lifecycleHooks">Lifecycle Hooks</a>
+                            <a class="nav-link" href="#computedProperties">Computed Properties</a>
+                            <a class="nav-link" href="#vueComponents">Vue Components</a>
+                            <a class="nav-link" href="#ajaxAndFetch">Ajax and Fetch</a>
+                            <a class="nav-link" href="#vueCLI">Vue CLI</a> -->
                         </nav>
                     </nav>
                 </div>
@@ -479,9 +498,6 @@
                             href='https://vuejs.org/v2/guide/forms.html' target='_blank'>Click here</a> to see the
                         official documentation for input binding.
                     </p>
-
-
-                    <br />
                     <br />
 
 
@@ -531,6 +547,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
 
@@ -585,6 +602,9 @@
                                         <img src='static/images/userNameTextHtml.png'>
                                         <p>userName is a blank value waiting on input from the user through v-model</p>
                                         <img src='static/images/userNameTextJs.png'>
+                                        <p>We can open our Vue Devtools and see the state of our data variable as it
+                                            updates in real time. </p>
+                                        <img src='static/images/VueDevToolsTextInput.png'>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -596,6 +616,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
 
@@ -681,6 +702,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
 
@@ -755,6 +777,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
                     <!-- To dynamically render radio buttons, we'll need to use v-bind on the value again, just like we did with the drop downs.  -->
@@ -820,6 +843,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
 
                     <!--Notice how we didn't use v-bind with the value? That's because the radio buttons are hard-coded into the html. -->
@@ -892,6 +916,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
                     <!-- To pull from a list of dictionaries, loop over the dictionary and call the key; this will call the selected values from data  -->
                     <div>
@@ -976,6 +1001,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
                     <!-- Checkboxes are boolean values (checked or unchecked, true or false) that can bound to data variables in vue just like text and radio buttons -->
                     <div>
@@ -1066,6 +1092,8 @@
                             </div>
                         </div>
                         <br />
+                        <br />
+                        <hr />
 
                         <!-- Just like with select inputs, we iterate over the redFruits list with a v-for, and generate our checkboxes from it. We used v-bind on the value because the list is coded in Vue -->
                         <div>
@@ -1137,6 +1165,8 @@
                             </div>
                         </div>
                         <br />
+                        <br />
+                        <hr />
                         <!-- These checkboxes are all bound to an empty list, so when the box is checked, its value is added to the list. We can see the state of the list as it updates below. These checkboxes will appear in a row because they're all held within the save div element.Because the checkboxes are being hard-coded into the html, we don't need to use v-bind on the value. -->
                         <div>
                             <h2 id="renderingCheckboxesHardCoded">Rendering Checkboxes Hard-Coded</h2>
@@ -1204,13 +1234,17 @@
                         </div>
                     </div>
                     <br />
+                    <br />
+                    <hr />
 
 
 
                     <h1 id="applyingMethods">Applying Methods</h1>
                     <!-- We made a calculate function in the vue app, now we need to use it. It's nearly identical to onClick(), only now we say v-on:click='calculate'.  -->
                     <!-- Since our function is in vue, we need to add v-on so it can communicate with the html. -->
-                    <p>Our view app has a place for methods, which are functions that run </p>
+                    <p>Our view app has a place for methods, which are functions that run javascript code and make the
+                        magic happen. <a href="https://v3.vuejs.org/guide/data-methods.html#methods"
+                            target="_blank">Click here</a> for the official docs on methods.</p>
                     <div>
                         <h2 id="calculate">Using the calculate Method</h2>
                         <p>Enter two numbers to be added together.</p>
@@ -1267,6 +1301,7 @@
                     </div>
                     <br />
                     <br />
+                    <hr />
 
                     <div>
                         <h2 id="convertTemp">Using the calculateTemp Method</h2>
@@ -1336,28 +1371,266 @@
                             </div>
                         </div>
                     </div>
+
                     <br />
                     <br />
+                    <hr />
 
-                    <!-- <h1 id='vIfAndShow'>v-if and v-show</h1>
+                    <h1 id='vIfAndShow'>v-if and v-show</h1>
+                    <p>Here's some examples of how we can work with v-if and v-show. <a
+                            href="https://v3.vuejs.org/guide/conditional.html#v-if" target="_blank">Click here</a> for
+                        the official v-if/v-show documents</p>
 
-                    <h2>v-if</h2> -->
-                    <!-- 
-                    make a variable in vue to connect to
-                    have it be a text input so the user can control it
-                    make a div with a little message to hide and show
-                    -->
-                    <!-- <div class="mb-5">
-                        <input type="number" v-model="vIfInput" />
+                    <h2 id="vIfTruthyFalsy">v-if Truthy/Falsy</h2>
+                    <div>
+                        <label for="ifTruthyInput">Type something here to see the secret message</label>
+                        <input type="text" v-model="vIfInput" id="ifTruthyInput" placeholder="something" />
 
-                        <div v-show="vIfInput > 5">
-                            Now you see me
+                        <div v-if="vIfInput" class="ms-3">
+                            Hi, I'm the secret message, and I came from html.
                         </div>
-                        <div v-else-if="vIfInput < 5">
-                            Now you don't
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ifTruthy">
+                        View Source Code
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="ifTruthy" tabindex="-1" aria-labelledby="ifTruthyLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ifTruthyLabel">v-if Truthy/Falsy</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close">X</button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <p>
+                                        We start out with an input, and we use v-model to bind it to our vIfInput
+                                        variable, so that the value of the variable becomes whatever the user entered.
+                                        Next, we create a parent element (a div in this case) and use v-if to bind the
+                                        entire block of code to our vIfInput variable. We're not rendering what the user
+                                        typed in, we're just waiting for it to become truthy so that the secret message
+                                        can be shown in the browser. If you're not sure what <a
+                                            href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy"
+                                            target="_blank">truthy</a> and <a
+                                            href="https://developer.mozilla.org/en-US/docs/Glossary/Falsey"
+                                            target="_blank">falsy</a> are, click on the links.
+                                    </p>
+                                    <img src='static/images/IfTruthyHtml.png'>
+                                    <p>
+                                        In Vue, we just need a variable to watch for changes. The v-if in the html will
+                                        do the rest.
+                                    </p>
+                                    <img src='static/images/IfTruthyVue.png'>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
                         </div>
-                    </div> -->
+                    </div>
+                    <br />
+                    <br />
+                    <hr />
 
+
+                    <h2 id="vShowTruthyFalsy">v-show Truthy/Falsy</h2>
+                    <div>
+                        <label for="showTruthyInput">Type something else here to see another secret message</label>
+                        <input type="text" v-model="vShowInput" id="ifTruthyInput" placeholder="something else" />
+
+                        <div v-if="vShowInput" class="ms-3">
+                            I'm not rendering what my v-model variable says, I came from html.
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showTruthy">
+                        View Source Code
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="showTruthy" tabindex="-1" aria-labelledby="showTruthyLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="showTruthyLabel">v-show Truthy/Falsy</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close">X</button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <p>
+                                        v-show is going to look identical to v-if, and that's because at this point, the
+                                        only difference is in the performance. We start out with an input, and we use
+                                        v-model to bind it to our vIfInput
+                                        variable, so that the value of the variable becomes whatever the user entered.
+                                        Next, we create a parent element (a div in this case) and use v-if to bind the
+                                        entire block of code to our vIfInput variable. We're not rendering what the user
+                                        typed in, we're just waiting for it to become truthy so that the secret message
+                                        can be shown in the browser. If you're not sure what <a
+                                            href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy"
+                                            target="_blank">truthy</a> and <a
+                                            href="https://developer.mozilla.org/en-US/docs/Glossary/Falsey"
+                                            target="_blank">falsy</a> are, click on the links.
+                                    </p>
+                                    <img src='static/images/ShowTruthyHtml.png'>
+                                    <p>
+                                        Again, we only need a variable to watch for changes.
+                                    </p>
+                                    <img src='static/images/ShowTruthyVue.png'>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <hr />
+
+
+                    <h2 id="vIfConditionals">v-if, v-else-if, v-else Using Conditionals</h2>
+                    <div>
+                        <label for="ifConditional">Enter a number (positive or negative) and you'll see a message based
+                            on that number.</label>
+                        <input type="number" v-model="vIfConditionalInput" id="ifConditional" v-bind:placeholder="0" />
+
+                        <div v-if="vIfConditionalInput == '' ">
+                            No number entered.
+                        </div>
+
+                        <div v-else-if="vIfConditionalInput > 0 && vIfConditionalInput < 10">
+                            Your number is between 0 and 10.
+                        </div>
+
+                        <div v-else-if="vIfConditionalInput <= 0">
+                            Your number is at or below 0.
+                        </div>
+
+                        <div v-else=>
+                            Your number is at or greater than 10.
+                        </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#ifConditionals">
+                            View Source Code
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="ifConditionals" tabindex="-1" aria-labelledby="ifConditionalsLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ifConditionalsLabel">v-if, v-else-if, v-else Using
+                                            Conditionals</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close">X</button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <p>
+                                            v-if statements hold a lot of power, and we can see that below. We can
+                                            decide, based on what the user enters, which block of code to show the user.
+                                            Unless the condition is met, the block of code will not show.
+                                        </p>
+                                        <img src='static/images/IfConditionalsHtml.png'>
+                                        <p>
+                                            Even with v-if statements, we only need the one variable to watch for all
+                                            changes.
+                                        </p>
+                                        <img src='static/images/IfConditionalsVue.png'>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <hr />
+
+                    <h2 id="vShowConditionals">v-show Conditionals</h2>
+                    <div>
+                        <label for="showConditionalInput">Enter a number greater than 0</label>
+                        <input type="number" v-model="vShowConditionalInput" id="showConditionalInput"
+                            placeholder="10" />
+
+                        <div v-show="vShowConditionalInput > 0" class="ms-3">
+                            You entered a number that is greater than 0.
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#showConditionals">
+                        View Source Code
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="showConditionals" tabindex="-1" aria-labelledby="showConditionalsLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="showConditionalsLabel">v-show Conditionals</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close">X</button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <p>
+                                        We can still write conditions with v-show, but we only get one. We can't add a
+                                        v-else-if or v-else the way we can with v-if, but sometimes that's that's
+                                        needed.
+                                    </p>
+                                    <img src='static/images/ShowConditionalsHtml.png'>
+                                    <p>
+                                        Vue only needs a variable to watch for changes. When the user enters something,
+                                        it will be saved to this variable, and then used in the conditional comparison.
+                                    </p>
+                                    <img src='static/images/ShowConditionalsVue.png'>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <hr />
+
+                    <!-- <h1 id="lifecycleHooks">Lifecycle Hooks</h1>
+                        <br />
+                        <br />
+                        <hr />
+
+                        
+                        <h1 id="computedProperties">Computed Properties</h1>
+                        <br />
+                        <br />
+                        <hr />
+
+                        
+                        <h1 id="vueComponents">Vue Components</h1>
+                        <br />
+                        <br />
+                        <hr />
+
+                        
+                        <h1 id="ajaxAndFetch">Ajax and Fetch</h1>
+                        <br />
+                        <br />
+                        <hr />
+
+                        
+                        <h1 id="vueCLI">Vue CLI</h1>
+                        <br />
+                        <br />
+                        <hr /> -->
                 </div>
             </div>
         </div>
